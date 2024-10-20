@@ -13,7 +13,7 @@ async def lifespan(app: FastAPI):
     await database.disconnect()
 
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(lifespan=lifespan, title="Store API", version="0.0.1")
 
 app.include_router(post_router, prefix="/posts")
 
